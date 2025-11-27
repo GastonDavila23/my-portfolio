@@ -12,12 +12,11 @@ export const Hero = () => {
       <div className="absolute top-20 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:mix-blend-screen dark:opacity-20 animate-blob animation-delay-2000"></div>
       <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:mix-blend-screen dark:opacity-20 animate-blob animation-delay-4000 transform -translate-x-1/2"></div>
 
-      {/* 1. La Foto */}
+      {/* 1. Foto */}
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        // AJUSTE MÓVIL: w-40 h-40 en móvil (un poco más chico) -> sm:w-64 (grande en tablet/PC)
         className="relative z-10 w-40 h-40 sm:w-64 sm:h-64 mb-8"
       >
         <motion.div
@@ -40,24 +39,22 @@ export const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* 2. El Nombre y Rol */}
+      {/* 2. Nombre y Rol */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="relative z-10 px-4"
       >
-        {/* AJUSTE MÓVIL: text-4xl en móvil (más controlado) -> sm:text-7xl en PC */}
         <h1 className="text-4xl sm:text-7xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
           Hola, soy <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 block sm:inline mt-2 sm:mt-0">{profile.name}</span>
         </h1>
-        {/* AJUSTE MÓVIL: text-lg o xl en móvil */}
         <h2 className="text-lg sm:text-3xl text-gray-600 dark:text-gray-300 font-medium">
           {profile.role}
         </h2>
       </motion.div>
 
-      {/* 3. El Indicador de Scroll */}
+      {/* 3. Indicador de Scroll */}
       <motion.div
         animate={{ y: [0, 10, 0] }} 
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+Portafolio Personal - Gastón Dávila 👨‍💻
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido al repositorio de mi portafolio profesional. Este proyecto fue diseñado y desarrollado para mostrar mis habilidades, experiencia y proyectos como Desarrollador Full Stack.
 
-Currently, two official plugins are available:
+🔗 Demo en vivo: https://portfolio-gaston-davila.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+🛠️ Tecnologías Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Este proyecto fue construido utilizando un stack moderno enfocado en rendimiento y buenas prácticas:
 
-## Expanding the ESLint configuration
+React (Vite): Biblioteca de UI rápida y modular.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+TypeScript: Para un código robusto y tipado estático.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Tailwind CSS: Estilizado utility-first responsivo y soporte nativo de Dark Mode.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Framer Motion: Animaciones fluidas y micro-interacciones.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+EmailJS: Funcionalidad de formulario de contacto serverless.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+React Icons: Iconografía consistente.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🚀 Características Principales
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+✅ Diseño Totalmente Responsivo: Adaptado a móviles, tablets y escritorio.
+
+🌗 Modo Oscuro/Claro: Detección automática de preferencias del sistema y switch manual.
+
+✨ Animaciones: Efectos de entrada (Reveal), scroll suave y elementos interactivos.
+
+📧 Formulario Funcional: Conexión directa a correo electrónico sin backend.
+
+📄 Descarga de CV: Acceso directo al currículum.
+
+📦 Instalación y Uso Local
+
+Si deseas clonar y correr este proyecto localmente:
+
+Clonar el repositorio:
+
+git clone [https://github.com/GastonDavila23/my-portfolio.git]
+
+
+Instalar dependencias:
+
+cd portfolio-gaston
+npm install
+
+
+Configurar Variables de Entorno:
+Crea un archivo .env en la raíz y agrega tus credenciales de EmailJS:
+
+VITE_SERVICE_ID=tu_service_id
+VITE_TEMPLATE_ID=tu_template_id
+VITE_PUBLIC_KEY=tu_public_key
+
+
+Correr el servidor de desarrollo:
+
+npm run dev
+
+
+📬 Contacto
+
+Si te interesa mi perfil o quieres charlar sobre tecnología, no dudes en contactarme:
+
+LinkedIn: linkedin.com/in/tu-usuario
+
+Email: tu@email.com
+
+Desarrollado por Gastón Dávila.

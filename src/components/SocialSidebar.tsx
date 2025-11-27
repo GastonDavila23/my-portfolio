@@ -21,23 +21,21 @@ export const SocialSidebar = () => {
     {
       name: "Email",
       icon: FaEnvelope,
-      url: `mailto:${profile.email}`,
+      url: `https://mail.google.com/mail/?view=cm&fs=1&to=${profile.email}`,
       color: "hover:bg-red-500",
     },
-    // Agregamos WhatsApp. Asegúrate de poner tu número real en el formato internacional (ej: 549...)
     { 
       name: "WhatsApp", 
       icon: FaWhatsapp, 
-      url: "https://wa.me/549XXXXXXXXXX", // <--- REEMPLAZA CON TU NÚMERO
+      url: "https://wa.me/5492616948318",
       color: "hover:bg-green-500" 
     },
   ];
 
   return (
-    // 'hidden md:flex' para ocultar en móvil y mostrar en pantallas medianas+
     <div className="hidden md:flex fixed right-0 top-1/2 -translate-y-1/2 z-40 items-center">
       
-      {/* BOTÓN TOGGLE (Pestañita) */}
+      {/* BOTÓN TOGGLE */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`
@@ -51,7 +49,7 @@ export const SocialSidebar = () => {
         {isOpen ? <FaChevronRight size={20} /> : <FaChevronLeft size={20} />}
       </button>
 
-      {/* CONTENEDOR DE ICONOS (Se oculta/muestra) */}
+      {/* CONTENEDOR DE ICONOS */}
       <div
         className={`
           flex flex-col bg-white dark:bg-slate-800 shadow-xl rounded-l-xl overflow-hidden

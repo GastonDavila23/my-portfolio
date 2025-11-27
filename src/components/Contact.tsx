@@ -46,7 +46,6 @@ export const Contact = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         
         {/* --- TARJETA IZQUIERDA --- */}
-        {/* AJUSTE MÓVIL: p-6 md:p-8 */}
         <div className="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col justify-between h-full">
           <div>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
@@ -83,7 +82,6 @@ export const Contact = () => {
         </div>
 
         {/* --- TARJETA DERECHA (FORMULARIO) --- */}
-        {/* AJUSTE MÓVIL: p-6 md:p-8 */}
         <div className="bg-white dark:bg-gray-900 p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 h-full">
           
           {isSuccess ? (

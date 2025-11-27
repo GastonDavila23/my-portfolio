@@ -13,7 +13,6 @@ export const Projects = () => {
             key={project.id} 
             className="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-slate-700 flex flex-col"
           >
-            {/* AJUSTE MÓVIL: p-6 en móvil -> md:p-8 en escritorio */}
             <div className="p-6 md:p-8 flex-1">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                 {project.title}
@@ -40,7 +39,6 @@ export const Projects = () => {
               </div>
             </div>
             
-            {/* Footer de tarjeta con padding ajustado */}
             <div className="bg-gray-50 dark:bg-slate-900/50 px-6 md:px-8 py-4 border-t border-gray-100 dark:border-slate-700">
               <a 
                 href={project.linkRepo} 

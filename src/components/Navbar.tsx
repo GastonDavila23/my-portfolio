@@ -21,7 +21,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Activamos el efecto un poco más abajo
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -34,7 +34,6 @@ export const Navbar = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      // Ajuste para el scroll suave y compensar la altura del navbar
       const yOffset = -100; 
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
@@ -42,8 +41,6 @@ export const Navbar = () => {
   };
 
   return (
-    // CAMBIO: 'fixed top-6' para que flote un poco separado del borde superior
-    // Centramos todo con 'left-0 right-0 mx-auto'
     <nav className={`fixed top-4 left-0 right-0 z-50 mx-auto transition-all duration-300 w-fit max-w-[95%] sm:max-w-3xl`}>
       
       {/* CÁPSULA FLOTANTE */}
@@ -56,12 +53,11 @@ export const Navbar = () => {
         }
       `}>
 
-        {/* --- ENLACES DE NAVEGACIÓN (Centrados) --- */}
+        {/* --- ENLACES DE NAVEGACIÓN --- */}
         <div className="flex items-center gap-1 sm:gap-6 mr-4 sm:mr-8">
           {['Inicio', 'Sobre mí', 'Proyectos', 'Contacto'].map((item) => (
             <button 
               key={item}
-              // Convertimos 'Sobre mí' a 'sobre-mi' para que coincida con el ID
               onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-').replace('í', 'i'))} 
               className="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-white/5 transition-all"
             >
@@ -73,7 +69,7 @@ export const Navbar = () => {
         {/* --- ACCIONES (CV y Tema) --- */}
         <div className="flex items-center gap-3 pl-4 border-l border-gray-200 dark:border-gray-700">
           
-          {/* Botón CV (Icono solo en móvil, Texto en PC) */}
+          {/* Botón CV */}
           <a 
             href="/cv.pdf" 
             download="CV_Gaston_Davila.pdf"
