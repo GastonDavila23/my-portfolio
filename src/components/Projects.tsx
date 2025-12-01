@@ -1,56 +1,73 @@
 import { projects } from '../data';
 import { SectionTitle } from './SectionTitle';
+import { ProjectCard } from './ProjectCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export const Projects = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-0">
       <SectionTitle title="Proyectos Destacados" />
       
-      <div className="grid gap-8 md:grid-cols-2">
-        {projects.map((project) => (
-          <div 
-            key={project.id} 
-            className="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-slate-700 flex flex-col"
-          >
-            <div className="p-6 md:p-8 flex-1">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                {project.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm sm:text-base">
-                {project.description}
-              </p>
-              
-              <div className="bg-blue-50 dark:bg-slate-700/50 p-4 rounded-lg mb-6 border-l-4 border-blue-500">
-                <p className="text-sm text-blue-900 dark:text-blue-100">
-                  <strong>💡 Desafío:</strong> {project.challenges}
-                </p>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.stack.map((tech, i) => (
-                  <span 
-                    key={i} 
-                    className="bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-200 text-xs font-semibold px-2.5 py-1 rounded border border-gray-200 dark:border-slate-600"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            <div className="bg-gray-50 dark:bg-slate-900/50 px-6 md:px-8 py-4 border-t border-gray-100 dark:border-slate-700">
-              <a 
-                href={project.linkRepo} 
-                target="_blank" 
-                rel="noreferrer" 
-                className="text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-800 dark:hover:text-blue-300 flex items-center gap-2 transition-colors text-sm sm:text-base"
-              >
-                🔗 Ver Código en GitHub
-              </a>
-            </div>
-          </div>
-        ))}
+      {/* CONTENEDOR PRINCIPAL CON PADRE RELATIVO */}
+      <div className="relative py-4 px-0 sm:px-14">
+        
+        {/* --- FLECHA IZQUIERDA --- */}
+        <div className="swiper-button-prev-custom absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 z-20 
+          flex items-center justify-center w-12 h-12 rounded-full cursor-pointer
+          bg-gray-900 dark:bg-slate-700 text-white border border-gray-800 dark:border-slate-500 shadow-xl
+          transition-all duration-300 hover:scale-110 hover:bg-black dark:hover:bg-slate-600
+          hidden md:flex
+          [&.swiper-button-disabled]:opacity-0 [&.swiper-button-disabled]:pointer-events-none"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+        </div>
+
+        {/* --- FLECHA DERECHA --- */}
+        <div className="swiper-button-next-custom absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 z-20 
+          flex items-center justify-center w-12 h-12 rounded-full cursor-pointer
+          bg-gray-900 dark:bg-slate-700 text-white border border-gray-800 dark:border-slate-500 shadow-xl
+          transition-all duration-300 hover:scale-110 hover:bg-black dark:hover:bg-slate-600
+          hidden md:flex
+          [&.swiper-button-disabled]:opacity-0 [&.swiper-button-disabled]:pointer-events-none"
+        >
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+        </div>
+
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          autoHeight={false}
+          navigation={{
+            prevEl: '.swiper-button-prev-custom',
+            nextEl: '.swiper-button-next-custom',
+          }}
+          pagination={{ clickable: true, dynamicBullets: true }}
+          breakpoints={{
+            768: { slidesPerView: 2, spaceBetween: 40 },
+            1024: { slidesPerView: 2, spaceBetween: 50 },
+          }}
+          className="
+            pb-14 !px-4 !overflow-hidden
+            [&_.swiper-wrapper]:items-stretch 
+            [&_.swiper-slide]:h-auto 
+            [&_.swiper-pagination-bullet-active]:bg-blue-600 dark:[&_.swiper-pagination-bullet-active]:bg-blue-400
+          "
+        >
+          {projects.map((project) => (
+            <SwiperSlide key={project.id}>
+              <ProjectCard project={project} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
