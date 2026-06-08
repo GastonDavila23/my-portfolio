@@ -71,8 +71,8 @@ export const Navbar = () => {
           
           {/* Botón CV */}
           <a 
-            href="/cv.pdf" 
-            download="CV_Gaston_Davila.pdf"
+            href="/Gaston-programador.pdf" 
+            download="Gaston-programador.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
